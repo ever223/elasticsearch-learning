@@ -5,7 +5,7 @@
     <artifactId>elasticsearch-learning</artifactId>
     <packaging>jar</packaging>
     <version>0.0.1-SNAPSHOT</version>
-    <name>elasticsearch learning Maven Webapp</name>
+    <name>elasticsearch learning</name>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -15,6 +15,8 @@
     </parent>
     <properties>
         <java.version>1.8</java.version>
+        <elasticsearch.version>5.1.1</elasticsearch.version>
+        <swagger.version>2.2.2</swagger.version>
     </properties>
 
     <dependencies>
@@ -25,44 +27,22 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-            <!--<exclusions>-->
-                <!--<exclusion>-->
-                    <!--<groupId>org.springframework.boot</groupId>-->
-                    <!--<artifactId>spring-boot-starter-logging</artifactId>-->
-                <!--</exclusion>-->
-            <!--</exclusions>-->
         </dependency>
-
-        <!--<dependency>-->
-            <!--<groupId>org.slf4j</groupId>-->
-            <!--<artifactId>slf4j-api</artifactId>-->
-        <!--</dependency>-->
-
-        <!-- ES 5.0.0 support start -->
+        <!-- ES 5.1.1 support start -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
             <version>2.6.2</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.6.2</version>
-        </dependency>
-        <!--<dependency>-->
-            <!--<groupId>com.fasterxml.jackson.core</groupId>-->
-            <!--<artifactId>jackson-core</artifactId>-->
-            <!--<version>2.8.1</version>-->
-        <!--</dependency>-->
-        <dependency>
             <groupId>org.elasticsearch.client</groupId>
             <artifactId>transport</artifactId>
-            <version>5.1.1</version>
+            <version>${elasticsearch.version}</version>
         </dependency>
         <dependency>
             <groupId>org.elasticsearch</groupId>
             <artifactId>elasticsearch</artifactId>
-            <version>5.1.1</version>
+            <version>${elasticsearch.version}</version>
         </dependency>
         <!-- ES 5.0.0 support end -->
 
@@ -83,12 +63,12 @@
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
-            <version>2.2.2</version>
+            <version>${swagger.version}</version>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
-            <version>2.2.2</version>
+            <version>${swagger.version}</version>
         </dependency>
 
         <dependency>

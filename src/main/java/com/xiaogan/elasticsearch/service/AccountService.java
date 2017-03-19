@@ -30,16 +30,17 @@ public class AccountService {
     @Autowired
     private Client client;
 
-    public SearchResponse search(String id) {
+    public SearchResponse search(int id) {
         SearchResponse response = client.prepareSearch(INDEX_NAME)
                 .setTypes(TYPE_NAME)
                 .setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
-                .setQuery(QueryBuilders.termQuery("_id", id))
+                .setQuery(QueryBuilders.termQuery("account_number", id))
                 .setFrom(0)
                 .setSize(60)
                 .setExplain(true)
                 .execute()
                 .actionGet();
+        System.out.println(QueryBuilders.termQuery("account_number", id));
         return response;
     }
 

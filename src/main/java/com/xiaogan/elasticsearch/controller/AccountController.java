@@ -19,7 +19,7 @@ public class AccountController {
     private AccountService accountService;
 
     @RequestMapping(value = "/response/{id}", method = RequestMethod.GET)
-    public SearchResponse search(@PathVariable("id") String id) {
+    public SearchResponse search(@PathVariable("id") int id) {
         return accountService.search(id);
     }
 
